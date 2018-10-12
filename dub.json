@@ -12,7 +12,8 @@
 	"dependencies": {
         "demo:tutorial1": "*",
         "demo:tutorial2": "*",
-		"demo:tutorial3": "*"
+		"demo:tutorial3": "*",
+		"demo:tutorial4": "*"
     },
 
 	"subPackages": [
@@ -53,6 +54,20 @@
 			},
 			"sourcePaths": ["tutorial3"],
 			"importPaths": ["tutorial3"],
+			"buildRequirements": [
+				"allowWarnings"
+			],
+		},
+		
+		{
+			"name": "tutorial4",
+			"targetType": "executable",
+			"targetName": "tutorial4",
+			"dependencies": {
+				"dagon": "~master"
+			},
+			"sourcePaths": ["tutorial4"],
+			"importPaths": ["tutorial4"],
 			"buildRequirements": [
 				"allowWarnings"
 			],

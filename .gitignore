@@ -1,0 +1,6 @@
+# Dub files
+.dub
+dub.selections.json
+
+# Binaries
+*.exe
