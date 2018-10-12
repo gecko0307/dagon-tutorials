@@ -4,6 +4,7 @@ import dagon;
 
 class TestScene: Scene
 {
+    TextureAsset aTexEnvmap;
     OBJAsset aOBJSuzanne;
     TextureAsset aTexStoneDiffuse;
     TextureAsset aTexStoneNormal;
@@ -15,7 +16,8 @@ class TestScene: Scene
     }
 
     override void onAssetsRequest()
-    {    
+    {
+        aTexEnvmap = addTextureAsset("data/envmap.hdr");
         aOBJSuzanne = addOBJAsset("data/suzanne.obj");
         aTexStoneDiffuse = addTextureAsset("data/stone-diffuse.png");
         aTexStoneNormal = addTextureAsset("data/stone-normal.png");
@@ -27,6 +29,9 @@ class TestScene: Scene
         super.onAllocate();
         
         view = New!Freeview(eventManager, assetManager);
+        
+        environment.setDayTime(0, 0, 0);
+        environment.environmentMap = aTexEnvmap.texture;
         
         auto matSuzanne = createMaterial();
         matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
@@ -44,6 +49,8 @@ class TestScene: Scene
         auto ePlane = createEntity3D();
         ePlane.drawable = New!ShapePlane(10, 10, 1, assetManager);
         ePlane.material = matGround;
+        
+        auto eSky = createSky();
     }
 }
 
@@ -51,7 +58,7 @@ class MyApplication: SceneApplication
 {
     this(string[] args)
     {
-        super(1280, 720, false, "Dagon tutorial 3. Normal maps", args);
+        super(1280, 720, false, "Dagon tutorial 4. Light sources", args);
 
         TestScene test = New!TestScene(sceneManager);
         sceneManager.addScene(test, "TestScene");

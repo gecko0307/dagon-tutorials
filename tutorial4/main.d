@@ -37,7 +37,6 @@ class TestScene: Scene
         matGround.diffuse = aTexStoneDiffuse.texture;
         matGround.normal = aTexStoneNormal.texture;
         matGround.height = aTexStoneHeight.texture;
-        matGround.roughness = 0.2;
 
         auto eSuzanne = createEntity3D();
         eSuzanne.drawable = aOBJSuzanne.mesh;
