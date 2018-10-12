@@ -1,0 +1,62 @@
+{
+    "name": "demo",
+    "description": "",
+    "homepage": "",
+    "license": "Boost",
+    "authors": [
+        "Timur Gafarov"
+    ],
+	
+	"targetType": "none",
+	
+	"dependencies": {
+        "demo:tutorial1": "*",
+        "demo:tutorial2": "*",
+		"demo:tutorial3": "*"
+    },
+
+	"subPackages": [
+		{
+			"name": "tutorial1",
+			"targetType": "executable",
+			"targetName": "tutorial1",
+			"dependencies": {
+				"dagon": "~master"
+			},
+			"sourcePaths": ["tutorial1"],
+			"importPaths": ["tutorial1"],
+			"buildRequirements": [
+				"allowWarnings"
+			],
+		},
+		
+		{
+			"name": "tutorial2",
+			"targetType": "executable",
+			"targetName": "tutorial2",
+			"dependencies": {
+				"dagon": "~master"
+			},
+			"sourcePaths": ["tutorial2"],
+			"importPaths": ["tutorial2"],
+			"buildRequirements": [
+				"allowWarnings"
+			],
+		},
+		
+		{
+			"name": "tutorial3",
+			"targetType": "executable",
+			"targetName": "tutorial3",
+			"dependencies": {
+				"dagon": "~master"
+			},
+			"sourcePaths": ["tutorial3"],
+			"importPaths": ["tutorial3"],
+			"buildRequirements": [
+				"allowWarnings"
+			],
+		}
+	]
+}
+
