@@ -45,7 +45,7 @@ class MyApplication: SceneApplication
 {
     this(string[] args)
     {
-        super(1280, 720, false, "Dagon tutorial 2. Textures", args);
+        super("Dagon tutorial 2. Textures", args);
 
         TestScene test = New!TestScene(sceneManager);
         sceneManager.addScene(test, "TestScene");

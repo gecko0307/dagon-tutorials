@@ -58,7 +58,7 @@ class MyApplication: SceneApplication
 {
     this(string[] args)
     {
-        super(1280, 720, false, "Dagon tutorial 5. Environment maps", args);
+        super("Dagon tutorial 5. Environment maps", args);
 
         TestScene test = New!TestScene(sceneManager);
         sceneManager.addScene(test, "TestScene");
