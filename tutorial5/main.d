@@ -32,6 +32,7 @@ class TestScene: Scene
         
         environment.setDayTime(0, 0, 0);
         environment.environmentMap = aTexEnvmap.texture;
+        environment.skyMap = aTexEnvmap.texture;
         
         auto matSuzanne = createMaterial();
         matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);

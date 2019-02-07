@@ -22,6 +22,10 @@ class TestScene: Scene
         
         view = New!Freeview(eventManager, assetManager);
         
+        mainSun = createLightSun(Quaternionf.identity, environment.sunColor, environment.sunEnergy);
+        mainSun.shadow = true;
+        environment.setDayTime(9, 00, 00);
+        
         auto matSuzanne = createMaterial();
         matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
 

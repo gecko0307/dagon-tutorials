@@ -28,7 +28,7 @@ class TestScene: Scene
         
         view = New!Freeview(eventManager, assetManager);
         
-        environment.setDayTime(0, 0, 0);
+        environment.setDayTime(00, 00, 00);
         
         auto matSuzanne = createMaterial();
         matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
