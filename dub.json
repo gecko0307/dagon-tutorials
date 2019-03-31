@@ -23,8 +23,11 @@
 			"targetType": "executable",
 			"targetName": "tutorial1",
 			"dependencies": {
-				"dagon": "~master"
+				"dagon": "0.10.0"
 			},
+            "subConfigurations": {
+                "dagon": "Minimal"
+            },
 			"sourcePaths": ["tutorial1"],
 			"importPaths": ["tutorial1"],
 			"buildRequirements": [
@@ -37,8 +40,11 @@
 			"targetType": "executable",
 			"targetName": "tutorial2",
 			"dependencies": {
-				"dagon": "~master"
+				"dagon": "0.10.0"
 			},
+            "subConfigurations": {
+                "dagon": "Minimal"
+            },
 			"sourcePaths": ["tutorial2"],
 			"importPaths": ["tutorial2"],
 			"buildRequirements": [
@@ -51,8 +57,11 @@
 			"targetType": "executable",
 			"targetName": "tutorial3",
 			"dependencies": {
-				"dagon": "~master"
+				"dagon": "0.10.0"
 			},
+            "subConfigurations": {
+                "dagon": "Minimal"
+            },
 			"sourcePaths": ["tutorial3"],
 			"importPaths": ["tutorial3"],
 			"buildRequirements": [
@@ -65,8 +74,11 @@
 			"targetType": "executable",
 			"targetName": "tutorial4",
 			"dependencies": {
-				"dagon": "~master"
+				"dagon": "0.10.0"
 			},
+            "subConfigurations": {
+                "dagon": "Minimal"
+            },
 			"sourcePaths": ["tutorial4"],
 			"importPaths": ["tutorial4"],
 			"buildRequirements": [
@@ -79,8 +91,11 @@
 			"targetType": "executable",
 			"targetName": "tutorial5",
 			"dependencies": {
-				"dagon": "~master"
+				"dagon": "0.10.0"
 			},
+            "subConfigurations": {
+                "dagon": "Minimal"
+            },
 			"sourcePaths": ["tutorial5"],
 			"importPaths": ["tutorial5"],
 			"buildRequirements": [
