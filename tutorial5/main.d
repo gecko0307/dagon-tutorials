@@ -4,72 +4,91 @@ import dagon;
 
 class TestScene: Scene
 {
-    TextureAsset aTexEnvmap;
+    Game game;
     OBJAsset aOBJSuzanne;
     TextureAsset aTexStoneDiffuse;
     TextureAsset aTexStoneNormal;
     TextureAsset aTexStoneHeight;
+    TextureAsset aTexEnvmap;
 
-    this(SceneManager smngr)
+    this(Game game)
     {
-        super(smngr);
+        super(game);
+        this.game = game;
     }
 
-    override void onAssetsRequest()
-    {
-        aTexEnvmap = addTextureAsset("data/envmap.hdr");
+    override void beforeLoad()
+    {    
         aOBJSuzanne = addOBJAsset("data/suzanne.obj");
         aTexStoneDiffuse = addTextureAsset("data/stone-diffuse.png");
         aTexStoneNormal = addTextureAsset("data/stone-normal.png");
         aTexStoneHeight = addTextureAsset("data/stone-height.png");
+        aTexEnvmap = addTextureAsset("data/envmap.hdr");
     }
 
-    override void onAllocate()
+    override void afterLoad()
     {
-        super.onAllocate();
+        game.deferredRenderer.ssaoEnabled = true;
+        game.deferredRenderer.ssaoPower = 6.0;
+        game.postProcessingRenderer.fxaaEnabled = true;
         
-        view = New!Freeview(eventManager, assetManager);
+        auto camera = addCamera();
+        auto freeview = New!FreeviewComponent(eventManager, camera);
+        freeview.zoom(-20);
+        freeview.pitch(-30.0f);
+        freeview.turn(10.0f);
+        game.renderer.activeCamera = camera;
+
+        auto sun = addLight(LightType.Sun);
+        sun.shadowEnabled = true;
+        sun.energy = 10.0f;
+        sun.pitch(-45.0f);
         
-        environment.setDayTime(0, 0, 0);
-        environment.environmentMap = aTexEnvmap.texture;
-        environment.skyMap = aTexEnvmap.texture;
-        
-        auto matSuzanne = createMaterial();
+        auto matSuzanne = New!Material(assetManager);
         matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
         
-        auto matGround = createMaterial();
+        auto matGround = New!Material(assetManager);
         matGround.diffuse = aTexStoneDiffuse.texture;
         matGround.normal = aTexStoneNormal.texture;
         matGround.height = aTexStoneHeight.texture;
 
-        auto eSuzanne = createEntity3D();
+        auto eSuzanne = addEntity();
         eSuzanne.drawable = aOBJSuzanne.mesh;
         eSuzanne.material = matSuzanne;
         eSuzanne.position = Vector3f(0, 1, 0);
         
-        auto ePlane = createEntity3D();
+        auto ePlane = addEntity();
         ePlane.drawable = New!ShapePlane(10, 10, 1, assetManager);
         ePlane.material = matGround;
         
-        auto eSky = createSky();
+        auto envCubemap = New!Cubemap(1024, assetManager);
+        envCubemap.fromEquirectangularMap(aTexEnvmap.texture);
+        environment.ambientMap = envCubemap;
+        
+        auto eSky = addEntity();
+        eSky.layer = EntityLayer.Background;
+        auto psync = New!PositionSync(eventManager, eSky, camera);
+        eSky.drawable = New!ShapeBox(Vector3f(1.0f, 1.0f, 1.0f), assetManager);
+        eSky.scaling = Vector3f(100.0f, 100.0f, 100.0f);
+        eSky.material = New!Material(assetManager);
+        eSky.material.depthWrite = false;
+        eSky.material.culling = false;
+        eSky.material.diffuse = envCubemap;
     }
 }
 
-class MyApplication: SceneApplication
+class MyGame: Game
 {
-    this(string[] args)
+    this(uint w, uint h, bool fullscreen, string title, string[] args)
     {
-        super("Dagon tutorial 5. Environment maps", args);
-
-        TestScene test = New!TestScene(sceneManager);
-        sceneManager.addScene(test, "TestScene");
-        sceneManager.goToScene("TestScene");
+        super(w, h, fullscreen, title, args);
+        currentScene = New!TestScene(this);
     }
 }
 
 void main(string[] args)
 {
-    MyApplication app = New!MyApplication(args);
-    app.run();
-    Delete(app);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 5. Environment maps", args);
+    game.run();
+    Delete(game);
 }

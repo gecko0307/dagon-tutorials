@@ -91,7 +91,7 @@
 			"targetType": "executable",
 			"targetName": "tutorial5",
 			"dependencies": {
-				"dagon": "0.10.0"
+				"dagon": "~master"
 			},
 			"subConfigurations": {
 				"dagon": "Minimal"
