@@ -74,7 +74,7 @@
 			"targetType": "executable",
 			"targetName": "tutorial4",
 			"dependencies": {
-				"dagon": "0.10.0"
+				"dagon": "~master"
 			},
 			"subConfigurations": {
 				"dagon": "Minimal"
