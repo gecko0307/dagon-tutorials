@@ -40,7 +40,7 @@
 			"targetType": "executable",
 			"targetName": "tutorial2",
 			"dependencies": {
-				"dagon": "0.10.0"
+				"dagon": "~master"
 			},
 			"subConfigurations": {
 				"dagon": "Minimal"
@@ -57,7 +57,7 @@
 			"targetType": "executable",
 			"targetName": "tutorial3",
 			"dependencies": {
-				"dagon": "0.10.0"
+				"dagon": "~master"
 			},
 			"subConfigurations": {
 				"dagon": "Minimal"

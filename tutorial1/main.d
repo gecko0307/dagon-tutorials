@@ -50,7 +50,6 @@ class MyGame: Game
     this(uint w, uint h, bool fullscreen, string title, string[] args)
     {
         super(w, h, fullscreen, title, args);
-
         currentScene = New!TestScene(this);
     }
 }
