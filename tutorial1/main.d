@@ -4,56 +4,60 @@ import dagon;
 
 class TestScene: Scene
 {
+    Game game;
     OBJAsset aOBJSuzanne;
 
-    this(SceneManager smngr)
+    this(Game game)
     {
-        super(smngr);
+        super(game);
+        this.game = game;
     }
 
-    override void onAssetsRequest()
+    override void beforeLoad()
     {    
         aOBJSuzanne = addOBJAsset("data/suzanne.obj");
     }
 
-    override void onAllocate()
+    override void afterLoad()
     {
-        super.onAllocate();
+        auto camera = addCamera();
+        auto freeview = New!FreeviewComponent(eventManager, camera);
+        freeview.zoom(-20);
+        freeview.pitch(-30.0f);
+        freeview.turn(10.0f);
+        game.renderer.activeCamera = camera;
+
+        auto sun = addLight(LightType.Sun);
+        sun.shadowEnabled = true;
+        sun.energy = 10.0f;
+        sun.pitch(-45.0f);
         
-        view = New!Freeview(eventManager, assetManager);
-        
-        mainSun = createLightSun(Quaternionf.identity, environment.sunColor, environment.sunEnergy);
-        mainSun.shadow = true;
-        environment.setDayTime(9, 00, 00);
-        
-        auto matSuzanne = createMaterial();
+        auto matSuzanne = New!Material(assetManager);
         matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
 
-        auto eSuzanne = createEntity3D();
+        auto eSuzanne = addEntity();
         eSuzanne.drawable = aOBJSuzanne.mesh;
         eSuzanne.material = matSuzanne;
         eSuzanne.position = Vector3f(0, 1, 0);
         
-        auto ePlane = createEntity3D();
+        auto ePlane = addEntity();
         ePlane.drawable = New!ShapePlane(10, 10, 1, assetManager);
     }
 }
 
-class MyApplication: SceneApplication
+class MyGame: Game
 {
-    this(string[] args)
+    this(uint w, uint h, bool fullscreen, string title, string[] args)
     {
-        super("Dagon tutorial 1. Simple application", args);
+        super(w, h, fullscreen, title, args);
 
-        TestScene test = New!TestScene(sceneManager);
-        sceneManager.addScene(test, "TestScene");
-        sceneManager.goToScene("TestScene");
+        currentScene = New!TestScene(this);
     }
 }
 
 void main(string[] args)
 {
-    MyApplication app = New!MyApplication(args);
-    app.run();
-    Delete(app);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 1. Simple application", args);
+    game.run();
+    Delete(game);
 }

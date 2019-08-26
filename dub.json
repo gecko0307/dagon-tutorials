@@ -1,21 +1,21 @@
 {
-    "name": "demo",
-    "description": "",
-    "homepage": "",
-    "license": "Boost",
-    "authors": [
-        "Timur Gafarov"
-    ],
+	"name": "demo",
+	"description": "",
+	"homepage": "",
+	"license": "Boost",
+	"authors": [
+		"Timur Gafarov"
+	],
 	
 	"targetType": "none",
 	
 	"dependencies": {
-        "demo:tutorial1": "*",
-        "demo:tutorial2": "*",
+		"demo:tutorial1": "*",
+		"demo:tutorial2": "*",
 		"demo:tutorial3": "*",
 		"demo:tutorial4": "*",
 		"demo:tutorial5": "*"
-    },
+	},
 
 	"subPackages": [
 		{
@@ -23,11 +23,11 @@
 			"targetType": "executable",
 			"targetName": "tutorial1",
 			"dependencies": {
-				"dagon": "0.10.0"
+				"dagon": "~master"
 			},
-            "subConfigurations": {
-                "dagon": "Minimal"
-            },
+			"subConfigurations": {
+				"dagon": "Minimal"
+			},
 			"sourcePaths": ["tutorial1"],
 			"importPaths": ["tutorial1"],
 			"buildRequirements": [
@@ -42,9 +42,9 @@
 			"dependencies": {
 				"dagon": "0.10.0"
 			},
-            "subConfigurations": {
-                "dagon": "Minimal"
-            },
+			"subConfigurations": {
+				"dagon": "Minimal"
+			},
 			"sourcePaths": ["tutorial2"],
 			"importPaths": ["tutorial2"],
 			"buildRequirements": [
@@ -59,9 +59,9 @@
 			"dependencies": {
 				"dagon": "0.10.0"
 			},
-            "subConfigurations": {
-                "dagon": "Minimal"
-            },
+			"subConfigurations": {
+				"dagon": "Minimal"
+			},
 			"sourcePaths": ["tutorial3"],
 			"importPaths": ["tutorial3"],
 			"buildRequirements": [
@@ -76,9 +76,9 @@
 			"dependencies": {
 				"dagon": "0.10.0"
 			},
-            "subConfigurations": {
-                "dagon": "Minimal"
-            },
+			"subConfigurations": {
+				"dagon": "Minimal"
+			},
 			"sourcePaths": ["tutorial4"],
 			"importPaths": ["tutorial4"],
 			"buildRequirements": [
@@ -93,9 +93,9 @@
 			"dependencies": {
 				"dagon": "0.10.0"
 			},
-            "subConfigurations": {
-                "dagon": "Minimal"
-            },
+			"subConfigurations": {
+				"dagon": "Minimal"
+			},
 			"sourcePaths": ["tutorial5"],
 			"importPaths": ["tutorial5"],
 			"buildRequirements": [
