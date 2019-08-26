@@ -22,6 +22,10 @@ class TestScene: Scene
 
     override void afterLoad()
     {
+        game.deferredRenderer.ssaoEnabled = true;
+        game.deferredRenderer.ssaoPower = 6.0;
+        game.postProcessingRenderer.fxaaEnabled = true;
+        
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);
         freeview.zoom(-20);
@@ -39,6 +43,7 @@ class TestScene: Scene
         
         auto matGround = New!Material(assetManager);
         matGround.diffuse = aTexStoneDiffuse.texture;
+        matGround.textureScale = Vector2f(2, 2);
 
         auto eSuzanne = addEntity();
         eSuzanne.drawable = aOBJSuzanne.mesh;

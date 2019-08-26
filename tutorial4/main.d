@@ -46,6 +46,7 @@ class TestScene: Scene
         matGround.diffuse = aTexStoneDiffuse.texture;
         matGround.normal = aTexStoneNormal.texture;
         matGround.height = aTexStoneHeight.texture;
+        matGround.parallax = ParallaxSimple;
         matGround.roughness = 0.2f;
         matGround.textureScale = Vector2f(2, 2);
 
