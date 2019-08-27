@@ -16,91 +16,55 @@
 		"demo:tutorial4": "*",
 		"demo:tutorial5": "*"
 	},
+    
+    "buildRequirements": [
+		"allowWarnings"
+	],
 
 	"subPackages": [
 		{
 			"name": "tutorial1",
 			"targetType": "executable",
 			"targetName": "tutorial1",
-			"dependencies": {
-				"dagon": "~master"
-			},
-			"subConfigurations": {
-				"dagon": "Minimal"
-			},
 			"sourcePaths": ["tutorial1"],
 			"importPaths": ["tutorial1"],
-			"buildRequirements": [
-				"allowWarnings"
-			],
+            "dependencies": { "dagon": "~master" }
 		},
 		
 		{
 			"name": "tutorial2",
 			"targetType": "executable",
 			"targetName": "tutorial2",
-			"dependencies": {
-				"dagon": "~master"
-			},
-			"subConfigurations": {
-				"dagon": "Minimal"
-			},
 			"sourcePaths": ["tutorial2"],
 			"importPaths": ["tutorial2"],
-			"buildRequirements": [
-				"allowWarnings"
-			],
+            "dependencies": { "dagon": "~master" }
 		},
 		
 		{
 			"name": "tutorial3",
 			"targetType": "executable",
 			"targetName": "tutorial3",
-			"dependencies": {
-				"dagon": "~master"
-			},
-			"subConfigurations": {
-				"dagon": "Minimal"
-			},
 			"sourcePaths": ["tutorial3"],
 			"importPaths": ["tutorial3"],
-			"buildRequirements": [
-				"allowWarnings"
-			],
+            "dependencies": { "dagon": "~master" }
 		},
 		
 		{
 			"name": "tutorial4",
 			"targetType": "executable",
 			"targetName": "tutorial4",
-			"dependencies": {
-				"dagon": "~master"
-			},
-			"subConfigurations": {
-				"dagon": "Minimal"
-			},
 			"sourcePaths": ["tutorial4"],
 			"importPaths": ["tutorial4"],
-			"buildRequirements": [
-				"allowWarnings"
-			],
+            "dependencies": { "dagon": "~master" }
 		},
 		
 		{
 			"name": "tutorial5",
 			"targetType": "executable",
 			"targetName": "tutorial5",
-			"dependencies": {
-				"dagon": "~master"
-			},
-			"subConfigurations": {
-				"dagon": "Minimal"
-			},
 			"sourcePaths": ["tutorial5"],
 			"importPaths": ["tutorial5"],
-			"buildRequirements": [
-				"allowWarnings"
-			],
+            "dependencies": { "dagon": "~master" }
 		}
 	]
 }
