@@ -14,7 +14,9 @@
 		"demo:tutorial2": "*",
 		"demo:tutorial3": "*",
 		"demo:tutorial4": "*",
-		"demo:tutorial5": "*"
+		"demo:tutorial5": "*",
+        "demo:tutorial9": "*",
+        "demo:tutorial10": "*"
 	},
     
     "buildRequirements": [
@@ -65,6 +67,27 @@
 			"sourcePaths": ["tutorial5"],
 			"importPaths": ["tutorial5"],
             "dependencies": { "dagon": "~master" }
+		},
+        
+        {
+			"name": "tutorial9",
+			"targetType": "executable",
+			"targetName": "tutorial9",
+			"sourcePaths": ["tutorial9"],
+			"importPaths": ["tutorial9"],
+            "dependencies": { "dagon": "~master" }
+		},
+		
+		{
+			"name": "tutorial10",
+			"targetType": "executable",
+			"targetName": "tutorial10",
+			"sourcePaths": ["tutorial10"],
+			"importPaths": ["tutorial10"],
+            "dependencies": { 
+                "dagon": "~master", 
+                "dagon:physics": "~master"
+            }
 		}
 	]
 }
