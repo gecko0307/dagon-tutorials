@@ -86,7 +86,7 @@ class MyGame: Game
 
 void main(string[] args)
 {
-    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 3. Normal maps", args);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 9. Post-processing", args);
     game.run();
     Delete(game);
 }
