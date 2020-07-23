@@ -53,7 +53,7 @@ class TestScene: Scene
         sun.energy = 10.0f;
         sun.pitch(-45.0f);
         
-        auto matGround = New!Material(assetManager);
+        auto matGround = addMaterial();
         matGround.diffuse = aTexStoneDiffuse.texture;
         matGround.normal = aTexStoneNormal.texture;
         matGround.height = aTexStoneHeight.texture;
@@ -68,7 +68,7 @@ class TestScene: Scene
         auto rbPlaneGeom = New!GeomBox(physicsWorld, Vector3f(10, 1, 10));
         physicsWorld.addShapeComponent(rbPlane, rbPlaneGeom, Vector3f(0.0f, 0.0f, 0.0f), 1.0f);
         
-        auto matBox = New!Material(assetManager);
+        auto matBox = addMaterial();
         matBox.diffuse = aTexCrateDiffuse.texture;
         matBox.normal = aTexCrateNormal.texture;
         matBox.roughness = 0.8f;

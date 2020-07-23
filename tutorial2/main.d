@@ -38,10 +38,10 @@ class TestScene: Scene
         sun.energy = 10.0f;
         sun.pitch(-45.0f);
         
-        auto matSuzanne = New!Material(assetManager);
+        auto matSuzanne = addMaterial();
         matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
         
-        auto matGround = New!Material(assetManager);
+        auto matGround = addMaterial();
         matGround.diffuse = aTexStoneDiffuse.texture;
         matGround.textureScale = Vector2f(2, 2);
 

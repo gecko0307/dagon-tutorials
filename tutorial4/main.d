@@ -39,10 +39,10 @@ class TestScene: Scene
         freeview.turn(10.0f);
         game.renderer.activeCamera = camera;
         
-        auto matSuzanne = New!Material(assetManager);
+        auto matSuzanne = addMaterial();
         matSuzanne.diffuse = Color4f(1.0, 1.0, 1.0, 1.0);
         
-        auto matGround = New!Material(assetManager);
+        auto matGround = addMaterial();
         matGround.diffuse = aTexStoneDiffuse.texture;
         matGround.normal = aTexStoneNormal.texture;
         matGround.height = aTexStoneHeight.texture;
