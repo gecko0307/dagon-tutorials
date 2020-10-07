@@ -30,7 +30,7 @@
 			"targetName": "tutorial1",
 			"sourcePaths": ["tutorial1"],
 			"importPaths": ["tutorial1"],
-            "dependencies": { "dagon": "0.11.0-alpha1" }
+            "dependencies": { "dagon": "0.11.0-beta1" }
 		},
 		
 		{
@@ -39,7 +39,7 @@
 			"targetName": "tutorial2",
 			"sourcePaths": ["tutorial2"],
 			"importPaths": ["tutorial2"],
-            "dependencies": { "dagon": "0.11.0-alpha1" }
+            "dependencies": { "dagon": "0.11.0-beta1" }
 		},
 		
 		{
@@ -48,7 +48,7 @@
 			"targetName": "tutorial3",
 			"sourcePaths": ["tutorial3"],
 			"importPaths": ["tutorial3"],
-            "dependencies": { "dagon": "0.11.0-alpha1" }
+            "dependencies": { "dagon": "0.11.0-beta1" }
 		},
 		
 		{
@@ -57,7 +57,7 @@
 			"targetName": "tutorial4",
 			"sourcePaths": ["tutorial4"],
 			"importPaths": ["tutorial4"],
-            "dependencies": { "dagon": "0.11.0-alpha1" }
+            "dependencies": { "dagon": "0.11.0-beta1" }
 		},
 		
 		{
@@ -66,7 +66,7 @@
 			"targetName": "tutorial5",
 			"sourcePaths": ["tutorial5"],
 			"importPaths": ["tutorial5"],
-            "dependencies": { "dagon": "0.11.0-alpha1" }
+            "dependencies": { "dagon": "0.11.0-beta1" }
 		},
         
         {
@@ -75,7 +75,7 @@
 			"targetName": "tutorial9",
 			"sourcePaths": ["tutorial9"],
 			"importPaths": ["tutorial9"],
-            "dependencies": { "dagon": "0.11.0-alpha1" }
+            "dependencies": { "dagon": "0.11.0-beta1" }
 		},
 		
 		{
@@ -85,8 +85,8 @@
 			"sourcePaths": ["tutorial10"],
 			"importPaths": ["tutorial10"],
             "dependencies": { 
-                "dagon": "0.11.0-alpha1", 
-                "dagon:physics": "0.11.0-alpha1"
+                "dagon": "0.11.0-beta1", 
+                "dagon:physics": "0.11.0-beta1"
             }
 		}
 	]

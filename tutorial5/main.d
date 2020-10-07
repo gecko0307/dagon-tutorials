@@ -34,7 +34,7 @@ class TestScene: Scene
         
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);
-        freeview.zoom(-20);
+        freeview.zoom(5);
         freeview.pitch(-30.0f);
         freeview.turn(10.0f);
         game.renderer.activeCamera = camera;
@@ -72,7 +72,7 @@ class TestScene: Scene
         auto psync = New!PositionSync(eventManager, eSky, camera);
         eSky.drawable = New!ShapeBox(Vector3f(1.0f, 1.0f, 1.0f), assetManager);
         eSky.scaling = Vector3f(100.0f, 100.0f, 100.0f);
-        eSky.material = New!Material(assetManager);
+        eSky.material = addMaterial();
         eSky.material.depthWrite = false;
         eSky.material.culling = false;
         eSky.material.diffuse = envCubemap;

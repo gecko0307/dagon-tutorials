@@ -32,7 +32,7 @@ class TestScene: Scene
         
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);
-        freeview.zoom(-20);
+        freeview.zoom(5);
         freeview.pitch(-30.0f);
         freeview.turn(10.0f);
         game.renderer.activeCamera = camera;
