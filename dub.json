@@ -15,6 +15,7 @@
 		"demo:tutorial3": "*",
 		"demo:tutorial4": "*",
 		"demo:tutorial5": "*",
+        "demo:tutorial6": "*",
         "demo:tutorial9": "*",
         "demo:tutorial10": "*"
 	},
@@ -66,6 +67,15 @@
 			"targetName": "tutorial5",
 			"sourcePaths": ["tutorial5"],
 			"importPaths": ["tutorial5"],
+            "dependencies": { "dagon": "0.11.0-beta1" }
+		},
+        
+        {
+			"name": "tutorial6",
+			"targetType": "executable",
+			"targetName": "tutorial6",
+			"sourcePaths": ["tutorial6"],
+			"importPaths": ["tutorial6"],
             "dependencies": { "dagon": "0.11.0-beta1" }
 		},
         
