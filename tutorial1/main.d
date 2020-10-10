@@ -22,6 +22,7 @@ class TestScene: Scene
     {
         game.deferredRenderer.ssaoEnabled = true;
         game.deferredRenderer.ssaoPower = 6.0;
+        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
         game.postProcessingRenderer.fxaaEnabled = true;
         
         auto camera = addCamera();

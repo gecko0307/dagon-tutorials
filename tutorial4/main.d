@@ -30,6 +30,7 @@ class TestScene: Scene
         environment.ambientColor = Color4f(0.2, 0.2, 0.2, 1);
         game.deferredRenderer.ssaoEnabled = true;
         game.deferredRenderer.ssaoPower = 6.0;
+        game.postProcessingRenderer.tonemapper = Tonemapper.ACES;
         game.postProcessingRenderer.glowEnabled = true;
         game.postProcessingRenderer.fxaaEnabled = true;
         

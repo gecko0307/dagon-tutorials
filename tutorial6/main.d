@@ -29,14 +29,10 @@ class TestScene: Scene
 
     override void afterLoad()
     {
-        //game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
+        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
         game.deferredRenderer.ssaoEnabled = true;
         game.deferredRenderer.ssaoPower = 6.0;
         game.postProcessingRenderer.fxaaEnabled = true;
-        game.postProcessingRenderer.glowEnabled = true;
-        game.postProcessingRenderer.glowThreshold = 0.5f;
-        game.postProcessingRenderer.glowIntensity = 0.3f;
-        game.postProcessingRenderer.glowRadius = 7;
         
         auto camera = addCamera();
         camera.fov = 23.0f;
@@ -49,7 +45,7 @@ class TestScene: Scene
         auto sun = addLight(LightType.Sun);
         sun.shadowEnabled = true;
         sun.energy = 10.0f;
-        sun.pitch(-80.0f);
+        sun.pitch(-24.0f);
         
         auto matHelmet = addMaterial();
         matHelmet.diffuse = aHelmetTextures[0].texture;
@@ -68,7 +64,8 @@ class TestScene: Scene
         auto envCubemap = New!Cubemap(1024, assetManager);
         envCubemap.fromEquirectangularMap(aTexEnvmap.texture);
         environment.ambientMap = envCubemap;
-        environment.fogEnd = 1000.0f;
+        environment.fogStart = 100.0f;
+        environment.fogEnd = 10000.0f;
         
         auto eSky = addEntity();
         eSky.layer = EntityLayer.Background;

@@ -31,6 +31,7 @@ class TestScene: Scene
     {
         game.deferredRenderer.ssaoEnabled = true;
         game.deferredRenderer.ssaoPower = 6.0;
+        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
         game.postProcessingRenderer.motionBlurEnabled = true;
         game.postProcessingRenderer.glowEnabled = true;
         game.postProcessingRenderer.glowThreshold = 0.3f;

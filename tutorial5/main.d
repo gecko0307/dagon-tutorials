@@ -30,6 +30,7 @@ class TestScene: Scene
     {
         game.deferredRenderer.ssaoEnabled = true;
         game.deferredRenderer.ssaoPower = 6.0;
+        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
         game.postProcessingRenderer.fxaaEnabled = true;
         
         auto camera = addCamera();
@@ -42,7 +43,7 @@ class TestScene: Scene
         auto sun = addLight(LightType.Sun);
         sun.shadowEnabled = true;
         sun.energy = 10.0f;
-        sun.pitch(-45.0f);
+        sun.pitch(-24.0f);
         
         auto matSuzanne = addMaterial();
         matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
