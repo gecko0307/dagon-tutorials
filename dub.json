@@ -1,104 +1,104 @@
 {
-	"name": "demo",
-	"description": "",
-	"homepage": "",
-	"license": "Boost",
-	"authors": [
-		"Timur Gafarov"
-	],
-	
-	"targetType": "none",
-	
-	"dependencies": {
-		"demo:tutorial1": "*",
-		"demo:tutorial2": "*",
-		"demo:tutorial3": "*",
-		"demo:tutorial4": "*",
-		"demo:tutorial5": "*",
+    "name": "demo",
+    "description": "",
+    "homepage": "",
+    "license": "Boost",
+    "authors": [
+        "Timur Gafarov"
+    ],
+    
+    "targetType": "none",
+    
+    "dependencies": {
+        "demo:tutorial1": "*",
+        "demo:tutorial2": "*",
+        "demo:tutorial3": "*",
+        "demo:tutorial4": "*",
+        "demo:tutorial5": "*",
         "demo:tutorial6": "*",
         "demo:tutorial9": "*",
         "demo:tutorial10": "*"
-	},
+    },
     
     "buildRequirements": [
-		"allowWarnings"
-	],
+        "allowWarnings"
+    ],
 
-	"subPackages": [
-		{
-			"name": "tutorial1",
-			"targetType": "executable",
-			"targetName": "tutorial1",
-			"sourcePaths": ["tutorial1"],
-			"importPaths": ["tutorial1"],
+    "subPackages": [
+        {
+            "name": "tutorial1",
+            "targetType": "executable",
+            "targetName": "tutorial1",
+            "sourcePaths": ["tutorial1"],
+            "importPaths": ["tutorial1"],
             "dependencies": { "dagon": "0.11.0" }
-		},
-		
-		{
-			"name": "tutorial2",
-			"targetType": "executable",
-			"targetName": "tutorial2",
-			"sourcePaths": ["tutorial2"],
-			"importPaths": ["tutorial2"],
-            "dependencies": { "dagon": "0.11.0" }
-		},
-		
-		{
-			"name": "tutorial3",
-			"targetType": "executable",
-			"targetName": "tutorial3",
-			"sourcePaths": ["tutorial3"],
-			"importPaths": ["tutorial3"],
-            "dependencies": { "dagon": "0.11.0" }
-		},
-		
-		{
-			"name": "tutorial4",
-			"targetType": "executable",
-			"targetName": "tutorial4",
-			"sourcePaths": ["tutorial4"],
-			"importPaths": ["tutorial4"],
-            "dependencies": { "dagon": "0.11.0" }
-		},
-		
-		{
-			"name": "tutorial5",
-			"targetType": "executable",
-			"targetName": "tutorial5",
-			"sourcePaths": ["tutorial5"],
-			"importPaths": ["tutorial5"],
-            "dependencies": { "dagon": "0.11.0" }
-		},
+        },
         
         {
-			"name": "tutorial6",
-			"targetType": "executable",
-			"targetName": "tutorial6",
-			"sourcePaths": ["tutorial6"],
-			"importPaths": ["tutorial6"],
+            "name": "tutorial2",
+            "targetType": "executable",
+            "targetName": "tutorial2",
+            "sourcePaths": ["tutorial2"],
+            "importPaths": ["tutorial2"],
             "dependencies": { "dagon": "0.11.0" }
-		},
+        },
         
         {
-			"name": "tutorial9",
-			"targetType": "executable",
-			"targetName": "tutorial9",
-			"sourcePaths": ["tutorial9"],
-			"importPaths": ["tutorial9"],
+            "name": "tutorial3",
+            "targetType": "executable",
+            "targetName": "tutorial3",
+            "sourcePaths": ["tutorial3"],
+            "importPaths": ["tutorial3"],
             "dependencies": { "dagon": "0.11.0" }
-		},
-		
-		{
-			"name": "tutorial10",
-			"targetType": "executable",
-			"targetName": "tutorial10",
-			"sourcePaths": ["tutorial10"],
-			"importPaths": ["tutorial10"],
+        },
+        
+        {
+            "name": "tutorial4",
+            "targetType": "executable",
+            "targetName": "tutorial4",
+            "sourcePaths": ["tutorial4"],
+            "importPaths": ["tutorial4"],
+            "dependencies": { "dagon": "0.11.0" }
+        },
+        
+        {
+            "name": "tutorial5",
+            "targetType": "executable",
+            "targetName": "tutorial5",
+            "sourcePaths": ["tutorial5"],
+            "importPaths": ["tutorial5"],
+            "dependencies": { "dagon": "0.11.0" }
+        },
+        
+        {
+            "name": "tutorial6",
+            "targetType": "executable",
+            "targetName": "tutorial6",
+            "sourcePaths": ["tutorial6"],
+            "importPaths": ["tutorial6"],
+            "dependencies": { "dagon": "0.11.0" }
+        },
+        
+        {
+            "name": "tutorial9",
+            "targetType": "executable",
+            "targetName": "tutorial9",
+            "sourcePaths": ["tutorial9"],
+            "importPaths": ["tutorial9"],
+            "dependencies": { "dagon": "0.11.0" }
+        },
+        
+        {
+            "name": "tutorial10",
+            "targetType": "executable",
+            "targetName": "tutorial10",
+            "sourcePaths": ["tutorial10"],
+            "importPaths": ["tutorial10"],
             "dependencies": { 
                 "dagon": "0.11.0", 
                 "dagon:physics": "0.11.0"
             }
-		}
-	]
+        }
+    ]
 }
 
