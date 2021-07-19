@@ -29,8 +29,8 @@
             "name": "tutorial1",
             "targetType": "executable",
             "targetName": "tutorial1",
-            "sourcePaths": ["tutorial1"],
-            "importPaths": ["tutorial1"],
+            "sourcePaths": ["src/tutorial1"],
+            "importPaths": ["src/tutorial1"],
             "dependencies": { "dagon": "0.11.0" }
         },
         
@@ -38,8 +38,8 @@
             "name": "tutorial2",
             "targetType": "executable",
             "targetName": "tutorial2",
-            "sourcePaths": ["tutorial2"],
-            "importPaths": ["tutorial2"],
+            "sourcePaths": ["src/tutorial2"],
+            "importPaths": ["src/tutorial2"],
             "dependencies": { "dagon": "0.11.0" }
         },
         
@@ -47,8 +47,8 @@
             "name": "tutorial3",
             "targetType": "executable",
             "targetName": "tutorial3",
-            "sourcePaths": ["tutorial3"],
-            "importPaths": ["tutorial3"],
+            "sourcePaths": ["src/tutorial3"],
+            "importPaths": ["src/tutorial3"],
             "dependencies": { "dagon": "0.11.0" }
         },
         
@@ -56,8 +56,8 @@
             "name": "tutorial4",
             "targetType": "executable",
             "targetName": "tutorial4",
-            "sourcePaths": ["tutorial4"],
-            "importPaths": ["tutorial4"],
+            "sourcePaths": ["src/tutorial4"],
+            "importPaths": ["src/tutorial4"],
             "dependencies": { "dagon": "0.11.0" }
         },
         
@@ -65,8 +65,8 @@
             "name": "tutorial5",
             "targetType": "executable",
             "targetName": "tutorial5",
-            "sourcePaths": ["tutorial5"],
-            "importPaths": ["tutorial5"],
+            "sourcePaths": ["src/tutorial5"],
+            "importPaths": ["src/tutorial5"],
             "dependencies": { "dagon": "0.11.0" }
         },
         
@@ -74,8 +74,8 @@
             "name": "tutorial6",
             "targetType": "executable",
             "targetName": "tutorial6",
-            "sourcePaths": ["tutorial6"],
-            "importPaths": ["tutorial6"],
+            "sourcePaths": ["src/tutorial6"],
+            "importPaths": ["src/tutorial6"],
             "dependencies": { "dagon": "0.11.0" }
         },
         
@@ -83,8 +83,8 @@
             "name": "tutorial9",
             "targetType": "executable",
             "targetName": "tutorial9",
-            "sourcePaths": ["tutorial9"],
-            "importPaths": ["tutorial9"],
+            "sourcePaths": ["src/tutorial9"],
+            "importPaths": ["src/tutorial9"],
             "dependencies": { "dagon": "0.11.0" }
         },
         
@@ -92,8 +92,8 @@
             "name": "tutorial10",
             "targetType": "executable",
             "targetName": "tutorial10",
-            "sourcePaths": ["tutorial10"],
-            "importPaths": ["tutorial10"],
+            "sourcePaths": ["src/tutorial10"],
+            "importPaths": ["src/tutorial10"],
             "dependencies": { 
                 "dagon": "0.11.0", 
                 "dagon:physics": "0.11.0"
