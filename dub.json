@@ -17,7 +17,8 @@
         "demo:tutorial5": "*",
         "demo:tutorial6": "*",
         "demo:tutorial9": "*",
-        "demo:tutorial10": "*"
+        "demo:tutorial10": "*",
+        "demo:tutorial17": "*"
     },
     
     "buildRequirements": [
@@ -97,6 +98,20 @@
             "dependencies": { 
                 "dagon": "0.11.0", 
                 "dagon:physics": "0.11.0"
+            }
+        },
+        
+        {
+            "name": "tutorial17",
+            "targetType": "executable",
+            "targetName": "tutorial17",
+            "sourcePaths": ["src/tutorial17"],
+            "importPaths": ["src/tutorial17"],
+            "dependencies": { 
+                "dagon": "0.11.0", 
+                "dagon:physics": "0.11.0",
+                "dagon:nuklear": "0.11.0",
+                "dagon:ftfont": "0.11.0"
             }
         }
     ]
