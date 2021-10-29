@@ -298,7 +298,7 @@ class MyGame: Game
 
 void main(string[] args)
 {
-    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 17. Nuklear GUI", args);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 18. Nuklear GUI", args);
     game.run();
     Delete(game);
 }
