@@ -45,6 +45,7 @@ class TestScene: Scene
         auto sun = addLight(LightType.Sun);
         sun.shadowEnabled = true;
         sun.energy = 10.0f;
+        sun.turn(-90.0f);
         sun.pitch(-24.0f);
         
         auto matSuzanne = addMaterial();

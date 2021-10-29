@@ -79,7 +79,7 @@ class MyGame: Game
 
 void main(string[] args)
 {
-    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 5. glTF Asset with PBR materials", args);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 6. glTF Asset with PBR materials", args);
     game.run();
     Delete(game);
 }

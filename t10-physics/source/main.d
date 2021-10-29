@@ -61,7 +61,7 @@ class TestScene: Scene
         matGround.normal = aTexStoneNormal.texture;
         matGround.height = aTexStoneHeight.texture;
         matGround.parallax = ParallaxSimple;
-        matGround.textureScale = Vector2f(2, 2);
+        matGround.textureScale = Vector2f(5, 5);
         
         auto ePlane = addEntity();
         ePlane.drawable = New!ShapeBox(Vector3f(10, 0.5f, 10), assetManager);

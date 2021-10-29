@@ -7,8 +7,8 @@
         "Timur Gafarov"
     ],
     "dependencies": {
-        "dagon": "~>0.12.0",
-        "dagon:newton": "~>0.12.0"
+        "dagon": "~>0.12.1",
+        "dagon:newton": "~>0.12.1"
     },
     "buildRequirements": [
         "allowWarnings"
