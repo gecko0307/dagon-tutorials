@@ -54,10 +54,10 @@ class TestScene: Scene
     {
         // Camera movement
         float speed = 5.0f * t.delta;
-        if (inputManager.getButton("forward")) camera.move(-speed);
-        if (inputManager.getButton("back")) camera.move(speed);
-        if (inputManager.getButton("left")) camera.strafe(-speed);
-        if (inputManager.getButton("right")) camera.strafe(speed);
+        if (eventManager.keyPressed[KEY_W]) camera.move(-speed);
+        if (eventManager.keyPressed[KEY_S]) camera.move(speed);
+        if (eventManager.keyPressed[KEY_A]) camera.strafe(-speed);
+        if (eventManager.keyPressed[KEY_D]) camera.strafe(speed);
     }
     
     override void onMouseButtonUp(int button)
