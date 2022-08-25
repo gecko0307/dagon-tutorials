@@ -6,7 +6,7 @@ class TestScene: Scene
 {
     Game game;
     GLTFAsset aHelmet;
-    ImageAsset aEnvmap;
+    TextureAsset aEnvmap;
     TextureAsset aBRDF;
 
     this(Game game)
@@ -18,7 +18,7 @@ class TestScene: Scene
     override void beforeLoad()
     {    
         aHelmet = addGLTFAsset("../assets/helmet-gltf/DamagedHelmet.gltf");
-        aEnvmap = addImageAsset("../assets/envmap.dds");
+        aEnvmap = addTextureAsset("../assets/envmap.dds");
         aBRDF = addTextureAsset("../assets/brdf.dds");
     }
 
@@ -47,9 +47,7 @@ class TestScene: Scene
         foreach(node; aHelmet.nodes)
             useEntity(node.entity);
         
-        auto envCubemap = New!Cubemap(1024, assetManager);
-        envCubemap.fromImage(aEnvmap.image);
-        environment.ambientMap = envCubemap;
+        environment.ambientMap = aEnvmap.texture;
         environment.ambientBRDF = aBRDF.texture;
         aBRDF.texture.useMipmapFiltering = false;
         aBRDF.texture.enableRepeat(false);
@@ -63,8 +61,8 @@ class TestScene: Scene
         eSky.scaling = Vector3f(100.0f, 100.0f, 100.0f);
         eSky.material = addMaterial();
         eSky.material.depthWrite = false;
-        eSky.material.culling = false;
-        eSky.material.diffuse = envCubemap;
+        eSky.material.useCulling = false;
+        eSky.material.baseColorTexture = aEnvmap.texture;
     }
 }
 

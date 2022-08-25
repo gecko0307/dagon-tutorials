@@ -9,7 +9,7 @@ class TestScene: Scene
     TextureAsset aTexStoneDiffuse;
     TextureAsset aTexStoneNormal;
     TextureAsset aTexStoneHeight;
-    ImageAsset aEnvmap;
+    TextureAsset aEnvmap;
     TextureAsset aBRDF;
 
     this(Game game)
@@ -24,7 +24,7 @@ class TestScene: Scene
         aTexStoneDiffuse = addTextureAsset("../assets/stone-diffuse.png");
         aTexStoneNormal = addTextureAsset("../assets/stone-normal.png");
         aTexStoneHeight = addTextureAsset("../assets/stone-height.png");
-        aEnvmap = addImageAsset("../assets/envmap.dds");
+        aEnvmap = addTextureAsset("../assets/envmap.dds");
         aBRDF = addTextureAsset("../assets/brdf.dds");
     }
 
@@ -49,14 +49,14 @@ class TestScene: Scene
         sun.pitch(-24.0f);
         
         auto matSuzanne = addMaterial();
-        matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
-        matSuzanne.roughness = 0.8f;
+        matSuzanne.baseColorFactor = Color4f(1.0, 0.2, 0.2, 1.0);
+        matSuzanne.roughnessFactor = 0.8f;
         
         auto matGround = addMaterial();
-        matGround.diffuse = aTexStoneDiffuse.texture;
-        matGround.normal = aTexStoneNormal.texture;
-        matGround.height = aTexStoneHeight.texture;
-        matGround.parallax = ParallaxSimple;
+        matGround.baseColorTexture = aTexStoneDiffuse.texture;
+        matGround.normalTexture = aTexStoneNormal.texture;
+        matGround.heightTexture = aTexStoneHeight.texture;
+        matGround.parallaxMode = ParallaxSimple;
         matGround.textureScale = Vector2f(2, 2);
 
         auto eSuzanne = addEntity();
@@ -68,9 +68,7 @@ class TestScene: Scene
         ePlane.drawable = New!ShapePlane(10, 10, 1, assetManager);
         ePlane.material = matGround;
         
-        auto envCubemap = New!Cubemap(1024, assetManager);
-        envCubemap.fromImage(aEnvmap.image);
-        environment.ambientMap = envCubemap;
+        environment.ambientMap = aEnvmap.texture;
         environment.ambientBRDF = aBRDF.texture;
         aBRDF.texture.useMipmapFiltering = false;
         aBRDF.texture.enableRepeat(false);
@@ -82,8 +80,8 @@ class TestScene: Scene
         eSky.scaling = Vector3f(100.0f, 100.0f, 100.0f);
         eSky.material = addMaterial();
         eSky.material.depthWrite = false;
-        eSky.material.culling = false;
-        eSky.material.diffuse = envCubemap;
+        eSky.material.useCulling = false;
+        eSky.material.baseColorTexture = aEnvmap.texture;
     }
 }
 

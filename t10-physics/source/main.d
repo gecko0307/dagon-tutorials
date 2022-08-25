@@ -57,10 +57,10 @@ class TestScene: Scene
         sun.pitch(-45.0f);
         
         auto matGround = addMaterial();
-        matGround.diffuse = aTexStoneDiffuse.texture;
-        matGround.normal = aTexStoneNormal.texture;
-        matGround.height = aTexStoneHeight.texture;
-        matGround.parallax = ParallaxSimple;
+        matGround.baseColorTexture = aTexStoneDiffuse.texture;
+        matGround.normalTexture = aTexStoneNormal.texture;
+        matGround.heightTexture = aTexStoneHeight.texture;
+        matGround.parallaxMode = ParallaxSimple;
         matGround.textureScale = Vector2f(5, 5);
         
         auto ePlane = addEntity();
@@ -70,9 +70,9 @@ class TestScene: Scene
         auto ePlanePhysicsController = ePlane.makeStaticBody(physicsWorld, planeShape);
         
         auto matBox = addMaterial();
-        matBox.diffuse = aTexCrateDiffuse.texture;
-        matBox.normal = aTexCrateNormal.texture;
-        matBox.roughness = 0.8f;
+        matBox.baseColorTexture = aTexCrateDiffuse.texture;
+        matBox.normalTexture = aTexCrateNormal.texture;
+        matBox.roughnessFactor = 0.8f;
         
         auto shBox = New!ShapeBox(Vector3f(0.5f, 0.5f, 0.5f), assetManager);
         auto boxShape = New!NewtonBoxShape(Vector3f(1, 1, 1), physicsWorld);

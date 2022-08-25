@@ -154,9 +154,9 @@ class TestScene: Scene
         if (eNuklear.visible)
             updateGUI(t);
         
-        eSuzanne.material.diffuse = diffuseColor;
-        eSuzanne.material.roughness = roughness;
-        eSuzanne.material.metallic = metallic;
+        eSuzanne.material.baseColorFactor = diffuseColor;
+        eSuzanne.material.roughnessFactor = roughness;
+        eSuzanne.material.metallicFactor = metallic;
     }
     
     void updateGUI(Time t)
@@ -210,16 +210,6 @@ class TestScene: Scene
     {
         if (gui.treePush(NK_TREE_NODE, "Render", NK_MAXIMIZED))
         {
-            gui.layoutRowDynamic(30, 2);
-            gui.label("Output:", NK_TEXT_LEFT);
-            auto oldOutputMode = game.deferred.outputMode;
-            game.deferred.outputMode =
-                cast(DebugOutputMode)gui.comboString(
-                    "Radiance\0Albedo\0Normal\0Position\0Roughness\0Metallic\0Occlusion",
-                    game.deferred.outputMode, 7, 25, NKVec2(120, 250));
-            if (game.deferred.outputMode != oldOutputMode)
-                writeln("Output mode: ", game.deferred.outputMode);
-
             gui.layoutRowDynamic(25, 1);
             game.deferred.ssaoSamples = gui.property("AO samples:", 1, game.deferred.ssaoSamples, 25, 1, 1);
             game.deferred.ssaoRadius = gui.property("AO radius:", 0.05f, game.deferred.ssaoRadius, 1.0f, 0.01f, 0.005f);
@@ -241,8 +231,8 @@ class TestScene: Scene
             gui.label("Tonemapper:", NK_TEXT_LEFT);
             game.postProc.tonemapper =
                 cast(Tonemapper)gui.comboString(
-                    "None\0Reinhard\0Hable\0ACES\0Filmic\0",
-                    game.postProc.tonemapper, 5, 25, NKVec2(120, 200));
+                    "None\0Reinhard\0Hable\0ACES\0Filmic\0Reinhard2\0Unreal\0",
+                    game.postProc.tonemapper, 7, 25, NKVec2(120, 200));
 
             gui.layoutRowDynamic(25, 1);
             game.postProc.exposure = gui.property("Exposure:", 0.0f, game.postProc.exposure, 2.0f, 0.01f, 0.005f);
