@@ -40,10 +40,10 @@ class TestScene: Scene
         sun.pitch(-45.0f);
         
         auto matSuzanne = addMaterial();
-        matSuzanne.diffuse = Color4f(1.0, 0.2, 0.2, 1.0);
+        matSuzanne.baseColorFactor = Color4f(1.0, 0.2, 0.2, 1.0);
         
         auto matGround = addMaterial();
-        matGround.diffuse = aTexStoneDiffuse.texture;
+        matGround.baseColorTexture = aTexStoneDiffuse.texture;
         matGround.textureScale = Vector2f(2, 2);
 
         auto eSuzanne = addEntity();
