@@ -1,0 +1,16 @@
+{
+    "name": "tutorial23",
+    "description": "",
+    "homepage": "",
+    "license": "Boost",
+    "authors": [
+        "Timur Gafarov"
+    ],
+    "dependencies": {
+        "dagon": "~>0.14.0",
+        "dagon:imgui": "~>0.14.0"
+    },
+    "buildRequirements": [
+        "allowWarnings"
+    ]
+}
