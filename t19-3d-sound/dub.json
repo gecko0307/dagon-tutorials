@@ -1,0 +1,16 @@
+{
+    "name": "tutorial19",
+    "description": "",
+    "homepage": "",
+    "license": "Boost",
+    "authors": [
+        "Timur Gafarov"
+    ],
+    "dependencies": {
+        "dagon": "~>0.14.0",
+        "bindbc-soloud": "~>0.1.1"
+    },
+    "buildRequirements": [
+        "allowWarnings"
+    ]
+}
