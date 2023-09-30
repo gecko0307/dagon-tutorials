@@ -1,0 +1,15 @@
+{
+    "name": "tutorial1",
+    "description": "",
+    "homepage": "",
+    "license": "Boost",
+    "authors": [
+        "Timur Gafarov"
+    ],
+    "dependencies": {
+        "dagon": "~>0.15.0"
+    },
+    "buildRequirements": [
+        "allowWarnings"
+    ]
+}
