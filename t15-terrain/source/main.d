@@ -20,12 +20,12 @@ class TestScene: Scene
 
     override void beforeLoad()
     {
-        aHeightmap = addImageAsset("data/terrain/heightmap.png");
-        aTexDesertAlbedo = addTextureAsset("data/terrain/desert-albedo.png");
-        aTexDesertNormal = addTextureAsset("data/terrain/desert-normal.png");
-        aTexGrassAlbedo = addTextureAsset("data/terrain/grass-albedo.png");
-        aTexGrassNormal = addTextureAsset("data/terrain/grass-normal.png");
-        aSplatmapGrass = addTextureAsset("data/terrain/splatmap-grass.png");
+        aHeightmap = addImageAsset("../assets/terrain/heightmap.png");
+        aTexDesertAlbedo = addTextureAsset("../assets/terrain/desert-albedo.png");
+        aTexDesertNormal = addTextureAsset("../assets/terrain/desert-normal.png");
+        aTexGrassAlbedo = addTextureAsset("../assets/terrain/grass-albedo.png");
+        aTexGrassNormal = addTextureAsset("../assets/terrain/grass-normal.png");
+        aSplatmapGrass = addTextureAsset("../assets/terrain/splatmap-grass.png");
     }
 
     override void afterLoad()
@@ -72,7 +72,7 @@ class TestScene: Scene
         auto layer1 = terrainMaterial.addLayer();
         layer1.baseColorTexture = aTexDesertAlbedo.texture;
         layer1.normalTexture = aTexDesertNormal.texture;
-        layer1.roughnessFactor = 0.9f;
+        layer1.roughnessFactor = 0.2f;
         layer1.textureScale = Vector2f(50, 50);
         
         auto layer2 = terrainMaterial.addLayer();

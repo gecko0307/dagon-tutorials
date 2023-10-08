@@ -30,7 +30,7 @@ class TestScene: Scene
         game.postProcessingRenderer.fxaaEnabled = true;
         
         auto camera = addCamera();
-        camera.fov = 23.0f;
+        camera.fov = 60.0f;
         auto freeview = New!FreeviewComponent(eventManager, camera);
         freeview.zoom(15.0f);
         freeview.pitch(-30.0f);

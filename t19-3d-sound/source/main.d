@@ -24,7 +24,7 @@ class TestScene: Scene
     {
         // Load music
         music = WavStream.create();
-        music.load("data/music.flac");
+        music.load("../assets/music/music.flac");
         music.set3dDistanceDelay(true);
     }
     
@@ -123,7 +123,7 @@ class MyGame: Game
 void main(string[] args)
 {
     loadSoloud();
-    MyGame game = New!MyGame(1280, 720, false, "Dagon application", args);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 19. 3D sound", args);
     game.run();
     Delete(game);
 }

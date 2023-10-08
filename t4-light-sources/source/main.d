@@ -32,7 +32,7 @@ class TestScene: Scene
         game.deferredRenderer.ssaoPower = 6.0;
         game.postProcessingRenderer.glowEnabled = true;
         game.postProcessingRenderer.glowThreshold = 0.2f;
-        game.postProcessingRenderer.glowIntensity = 0.05f;
+        game.postProcessingRenderer.glowIntensity = 0.01f;
         game.postProcessingRenderer.glowRadius = 10;
         game.postProcessingRenderer.fxaaEnabled = true;
         
@@ -44,14 +44,14 @@ class TestScene: Scene
         game.renderer.activeCamera = camera;
         
         auto matSuzanne = addMaterial();
-        matSuzanne.diffuse = Color4f(1.0, 1.0, 1.0, 1.0);
+        matSuzanne.baseColorFactor = Color4f(1.0, 1.0, 1.0, 1.0);
         
         auto matGround = addMaterial();
-        matGround.diffuse = aTexStoneDiffuse.texture;
-        matGround.normal = aTexStoneNormal.texture;
-        matGround.height = aTexStoneHeight.texture;
-        matGround.parallax = ParallaxSimple;
-        matGround.roughness = 0.2f;
+        matGround.baseColorTexture = aTexStoneDiffuse.texture;
+        matGround.normalTexture = aTexStoneNormal.texture;
+        matGround.heightTexture = aTexStoneHeight.texture;
+        matGround.parallaxMode = ParallaxSimple;
+        matGround.roughnessFactor = 0.2f;
         matGround.textureScale = Vector2f(2, 2);
 
         auto eSuzanne = addEntity();
@@ -85,9 +85,9 @@ class TestScene: Scene
         lightGeom.drawable = lightSphere;
         lightGeom.scaling = Vector3f(areaRadius, areaRadius, areaRadius);
         lightGeom.material = New!Material(assetManager);
-        lightGeom.material.diffuse = color;
-        lightGeom.material.emission = color;
-        lightGeom.material.energy = energy;
+        lightGeom.material.baseColorFactor = color;
+        lightGeom.material.emissionFactor = color;
+        lightGeom.material.emissionEnergy = energy;
 
         return light;
     }

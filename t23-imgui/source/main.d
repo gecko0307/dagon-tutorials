@@ -26,7 +26,7 @@ class ImGui: EventListener
             0x0400, 0x044F, // Cyrillic
             0
         ];
-        font = ImFontAtlas_AddFontFromFileTTF(io.Fonts, "data/font/Roboto.ttf", 16, null, 
+        font = ImFontAtlas_AddFontFromFileTTF(io.Fonts, "../assets/font/DroidSans.ttf", 16, null, 
             ranges.ptr);
         igStyleColorsDark(null);
         ImGui_ImplSDL2_InitForOpenGL(application.window, application.glcontext);
@@ -159,7 +159,7 @@ class MyGame: Game
 void main(string[] args)
 {
     ImGuiSupport sup = loadImGui();
-    MyGame game = New!MyGame(1280, 720, false, "Dagon application", args);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 23. ImGui", args);
     game.run();
     Delete(game);
 }

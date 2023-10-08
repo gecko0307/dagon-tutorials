@@ -1,13 +1,13 @@
 {
     "name": "tutorial7",
     "description": "",
-    "homepage": "",
+    "homepage": "https://github.com/gecko0307/dagon-tutorials",
     "license": "Boost",
     "authors": [
         "Timur Gafarov"
     ],
     "dependencies": {
-        "dagon": "~master"
+        "dagon": "~>0.15.0"
     },
     "buildRequirements": [
         "allowWarnings"
