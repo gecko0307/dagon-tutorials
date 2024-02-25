@@ -75,6 +75,7 @@ class TestScene: Scene
         
         auto eSky = addEntity();
         eSky.layer = EntityLayer.Background;
+        eSky.gbufferMask = 0.0f;
         auto psync = New!PositionSync(eventManager, eSky, camera);
         eSky.drawable = New!ShapeBox(Vector3f(1.0f, 1.0f, 1.0f), assetManager);
         eSky.scaling = Vector3f(100.0f, 100.0f, 100.0f);

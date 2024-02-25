@@ -30,7 +30,7 @@ class ImGui: EventListener
             ranges.ptr);
         igStyleColorsDark(null);
         ImGui_ImplSDL2_InitForOpenGL(application.window, application.glcontext);
-        ImGuiOpenGLBackend.init();
+        ImGuiOpenGLBackend.init("#version 400 core");
     }
     
     void onProcessEvent(SDL_Event* event)
