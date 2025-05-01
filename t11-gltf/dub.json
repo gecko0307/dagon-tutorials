@@ -1,5 +1,5 @@
 {
-    "name": "tutorial10",
+    "name": "tutorial11",
     "description": "",
     "homepage": "https://github.com/gecko0307/dagon-tutorials",
     "license": "BSL-1.0",
@@ -7,8 +7,7 @@
         "Timur Gafarov"
     ],
     "dependencies": {
-        "dagon": "~>0.21.1",
-        "dagon:newton": "~>0.21.1"
+        "dagon": "~master"
     },
     "buildRequirements": [
         "allowWarnings"
