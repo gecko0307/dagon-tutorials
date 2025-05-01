@@ -33,9 +33,11 @@ class MyScene: Scene
         auto camera = addCamera();
         camera.fov = 60.0f;
         auto freeview = New!FreeviewComponent(eventManager, camera);
-        freeview.zoom(-10.0f);
-        freeview.pitch(-30.0f);
-        freeview.turn(10.0f);
+        freeview.setZoom(5);
+        freeview.setRotation(30.0f, -45.0f, 0.0f);
+        freeview.translationStiffness = 0.25f;
+        freeview.rotationStiffness = 0.25f;
+        freeview.zoomStiffness = 0.25f;
         game.renderer.activeCamera = camera;
         
         Color4f envColor = Color4f(0.15f, 0.075f, 0.0f, 1.0f);

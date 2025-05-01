@@ -7,7 +7,8 @@
         "Timur Gafarov"
     ],
     "dependencies": {
-        "dagon": "~>0.16.0",
+        "dagon": "~>0.21.1",
+        "bindbc-loader": "1.1.4",
         "bindbc-soloud": "~>0.1.1"
     },
     "buildRequirements": [

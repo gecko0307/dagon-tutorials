@@ -5,7 +5,7 @@ import dagon;
 class TestScene: Scene
 {
     Game game;
-    ImageAsset aHeightmap;
+    TextureAsset aHeightmap;
     TextureAsset aTexDesertAlbedo;
     TextureAsset aTexDesertNormal;
     TextureAsset aTexGrassAlbedo;
@@ -20,7 +20,8 @@ class TestScene: Scene
 
     override void beforeLoad()
     {
-        aHeightmap = addImageAsset("../assets/terrain/heightmap.png");
+        aHeightmap = addTextureAsset("../assets/terrain/heightmap.png");
+        aHeightmap.persistent = true;
         aTexDesertAlbedo = addTextureAsset("../assets/terrain/desert-albedo.png");
         aTexDesertNormal = addTextureAsset("../assets/terrain/desert-normal.png");
         aTexGrassAlbedo = addTextureAsset("../assets/terrain/grass-albedo.png");
@@ -39,9 +40,11 @@ class TestScene: Scene
         camera.fov = 50.0f;
         
         auto freeview = New!FreeviewComponent(eventManager, camera);
-        freeview.zoom(-10);
-        freeview.pitch(-20.0f);
-        freeview.turn(10.0f);
+        freeview.setZoom(20);
+        freeview.setRotation(30.0f, -45.0f, 0.0f);
+        freeview.translationStiffness = 0.25f;
+        freeview.rotationStiffness = 0.25f;
+        freeview.zoomStiffness = 0.25f;
         game.renderer.activeCamera = camera;
 
         auto sun = addLight(LightType.Sun);

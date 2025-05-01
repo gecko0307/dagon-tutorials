@@ -54,9 +54,11 @@ class TestScene: Scene
         
         auto camera = addCamera();
         freeview = New!FreeviewComponent(eventManager, camera);
-        freeview.zoom(5);
-        freeview.pitch(-30.0f);
-        freeview.turn(10.0f);
+        freeview.setZoom(5);
+        freeview.setRotation(30.0f, -45.0f, 0.0f);
+        freeview.translationStiffness = 0.25f;
+        freeview.rotationStiffness = 0.25f;
+        freeview.zoomStiffness = 0.25f;
         game.renderer.activeCamera = camera;
 
         auto sun = addLight(LightType.Sun);
@@ -231,8 +233,8 @@ class TestScene: Scene
             gui.label("Tonemapper:", NK_TEXT_LEFT);
             game.postProc.tonemapper =
                 cast(Tonemapper)gui.comboString(
-                    "None\0Reinhard\0Hable\0ACES\0Filmic\0Reinhard2\0Unreal\0",
-                    game.postProc.tonemapper, 7, 25, NKVec2(120, 200));
+                    "None\0Reinhard\0Uncharted\0ACES\0Filmic\0Reinhard2\0Unreal\0AgX Base\0Agx Punchy\0",
+                    game.postProc.tonemapper, 9, 25, NKVec2(120, 200));
 
             gui.layoutRowDynamic(25, 1);
             game.postProc.exposure = gui.property("Exposure:", 0.0f, game.postProc.exposure, 2.0f, 0.01f, 0.005f);

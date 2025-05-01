@@ -7,10 +7,11 @@
         "Timur Gafarov"
     ],
     "dependencies": {
-        "dagon": "~>0.16.0",
-        "dagon:newton": "~>0.16.0"
+        "dagon": "~>0.21.1",
+        "dagon:newton": "~>0.21.1"
     },
     "buildRequirements": [
         "allowWarnings"
-    ]
+    ],
+    "lflags-linux": ["-rpath=$$ORIGIN"]
 }

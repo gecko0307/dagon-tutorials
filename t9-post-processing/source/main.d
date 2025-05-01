@@ -31,7 +31,7 @@ class TestScene: Scene
     {
         game.deferredRenderer.ssaoEnabled = true;
         game.deferredRenderer.ssaoPower = 6.0;
-        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
+        game.postProcessingRenderer.tonemapper = Tonemapper.AgX_Punchy;
         game.postProcessingRenderer.motionBlurEnabled = true;
         game.postProcessingRenderer.glowEnabled = true;
         game.postProcessingRenderer.glowThreshold = 0.3f;
@@ -45,9 +45,11 @@ class TestScene: Scene
         
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);
-        freeview.zoom(5);
-        freeview.pitch(-30.0f);
-        freeview.turn(10.0f);
+        freeview.setZoom(5);
+        freeview.setRotation(30.0f, -45.0f, 0.0f);
+        freeview.translationStiffness = 0.25f;
+        freeview.rotationStiffness = 0.25f;
+        freeview.zoomStiffness = 0.25f;
         game.renderer.activeCamera = camera;
 
         auto sun = addLight(LightType.Sun);

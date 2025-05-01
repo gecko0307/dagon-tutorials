@@ -35,12 +35,15 @@ class TestScene: Scene
         game.postProcessingRenderer.glowIntensity = 0.01f;
         game.postProcessingRenderer.glowRadius = 10;
         game.postProcessingRenderer.fxaaEnabled = true;
+        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
         
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);
-        freeview.zoom(5);
-        freeview.pitch(-30.0f);
-        freeview.turn(10.0f);
+        freeview.setZoom(5);
+        freeview.setRotation(30.0f, -45.0f, 0.0f);
+        freeview.translationStiffness = 0.25f;
+        freeview.rotationStiffness = 0.25f;
+        freeview.zoomStiffness = 0.25f;
         game.renderer.activeCamera = camera;
         
         auto matSuzanne = addMaterial();
