@@ -7,7 +7,7 @@
         "Timur Gafarov"
     ],
     "dependencies": {
-        "dagon": "~>0.21.1"
+        "dagon": "~>0.23.0"
     },
     "buildRequirements": [
         "allowWarnings"
