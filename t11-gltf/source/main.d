@@ -8,7 +8,7 @@ class TestScene: Scene
     MyGame game;
     
     GLTFAsset aFox;
-    GLTFPose pose;
+    GLTFBlendedPose pose;
     
     TextureAsset aGrass;
     
@@ -63,8 +63,8 @@ class TestScene: Scene
         aFox.material("fox_material").shadeless = true;
         
         auto nFox = aFox.node("fox");
-        pose = New!GLTFPose(nFox.skin, assetManager);
-        pose.animation = aFox.animation("Walk");
+        pose = New!GLTFBlendedPose(nFox.skin, assetManager);
+        pose.switchToAnimation(aFox.animation("Walk"));
         auto eFox = nFox.entity;
         eFox.pose = pose;
         eFox.renderLayer = 1;
@@ -98,17 +98,17 @@ class TestScene: Scene
     {
         if (key == KEY_1)
         {
-            pose.animation = aFox.animation("Survey");
+            pose.switchToAnimation(aFox.animation("Survey"), 0.25f);
             groundScrollSpeed = 0.0f;
         }
         else if (key == KEY_2)
         {
-            pose.animation = aFox.animation("Walk");
+            pose.switchToAnimation(aFox.animation("Walk"), 0.25f);
             groundScrollSpeed = 0.8f;
         }
         else if (key == KEY_3)
         {
-            pose.animation = aFox.animation("Run");
+            pose.switchToAnimation(aFox.animation("Run"), 0.25f);
             groundScrollSpeed = 1.0f;
         }
     }
