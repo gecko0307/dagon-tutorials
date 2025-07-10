@@ -4,7 +4,6 @@ import std.stdio;
 
 import dagon;
 import dagon.ext.nuklear;
-import dagon.ext.ftfont;
 
 class TestScene: Scene
 {

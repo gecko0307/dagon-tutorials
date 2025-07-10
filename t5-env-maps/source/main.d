@@ -85,6 +85,7 @@ class TestScene: Scene
         eSky.material.depthWrite = false;
         eSky.material.useCulling = false;
         eSky.material.baseColorTexture = aEnvmap.texture;
+        eSky.material.linearColor = true;
     }
 }
 
