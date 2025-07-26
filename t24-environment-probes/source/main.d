@@ -9,7 +9,6 @@ class TestScene: Scene
     GLTFAsset aRoom;
     TextureAsset aEnvmap;
     TextureAsset aEnvmapRoom;
-    TextureAsset aBRDF;
     
     Entity helmet;
     
@@ -25,7 +24,6 @@ class TestScene: Scene
         aRoom = addGLTFAsset("../assets/room/room.gltf");
         aEnvmap = addTextureAsset("../assets/envmap.dds");
         aEnvmapRoom = addTextureAsset("../assets/room/room.hdr");
-        aBRDF = addTextureAsset("../assets/brdf.dds");
     }
 
     override void afterLoad()
@@ -46,10 +44,8 @@ class TestScene: Scene
         game.postProcessingRenderer.exposure = 1.0f;
         
         environment.ambientMap = aEnvmap.texture;
-        environment.ambientBRDF = aBRDF.texture;
+        environment.ambientBRDF = game.deferredRenderer.brdf;
         environment.ambientEnergy = 1.0f;
-        aBRDF.texture.useMipmapFiltering = false;
-        aBRDF.texture.enableRepeat(false);
         
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);

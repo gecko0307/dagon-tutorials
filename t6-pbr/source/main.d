@@ -7,7 +7,6 @@ class TestScene: Scene
     Game game;
     GLTFAsset aHelmet;
     TextureAsset aEnvmap;
-    TextureAsset aBRDF;
 
     this(Game game)
     {
@@ -19,7 +18,6 @@ class TestScene: Scene
     {    
         aHelmet = addGLTFAsset("../assets/helmet-gltf/DamagedHelmet.gltf");
         aEnvmap = addTextureAsset("../assets/envmap.dds");
-        aBRDF = addTextureAsset("../assets/brdf.dds");
     }
 
     override void afterLoad()
@@ -50,9 +48,7 @@ class TestScene: Scene
             useEntity(node.entity);
         
         environment.ambientMap = aEnvmap.texture;
-        environment.ambientBRDF = aBRDF.texture;
-        aBRDF.texture.useMipmapFiltering = false;
-        aBRDF.texture.enableRepeat(false);
+        environment.ambientBRDF = game.deferredRenderer.brdf;
         environment.fogStart = 100.0f;
         environment.fogEnd = 10000.0f;
         

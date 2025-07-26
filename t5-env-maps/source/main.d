@@ -10,7 +10,6 @@ class TestScene: Scene
     TextureAsset aTexStoneNormal;
     TextureAsset aTexStoneHeight;
     TextureAsset aEnvmap;
-    TextureAsset aBRDF;
 
     this(Game game)
     {
@@ -25,7 +24,6 @@ class TestScene: Scene
         aTexStoneNormal = addTextureAsset("../assets/stone-normal.png");
         aTexStoneHeight = addTextureAsset("../assets/stone-height.png");
         aEnvmap = addTextureAsset("../assets/envmap.dds");
-        aBRDF = addTextureAsset("../assets/brdf.dds");
     }
 
     override void afterLoad()
@@ -71,9 +69,7 @@ class TestScene: Scene
         ePlane.material = matGround;
         
         environment.ambientMap = aEnvmap.texture;
-        environment.ambientBRDF = aBRDF.texture;
-        aBRDF.texture.useMipmapFiltering = false;
-        aBRDF.texture.enableRepeat(false);
+        environment.ambientBRDF = game.deferredRenderer.brdf;
         
         auto eSky = addEntity();
         eSky.layer = EntityLayer.Background;
