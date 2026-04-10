@@ -28,21 +28,6 @@ class TestScene: Scene
 
     override void afterLoad()
     {
-        game.deferredRenderer.ssaoEnabled = true;
-        game.deferredRenderer.ssaoSamples = 20;
-        game.deferredRenderer.ssaoPower = 3.0f;
-        game.deferredRenderer.ssaoRadius = 0.25;
-        game.deferredRenderer.ssaoDenoise = 0.5f;
-        game.deferredRenderer.occlusionBufferDetail = 1.0f;
-        game.postProcessingRenderer.fxaaEnabled = true;
-        game.postProcessingRenderer.fStop = 1.0;
-        game.postProcessingRenderer.glowEnabled = true;
-        game.postProcessingRenderer.glowThreshold = 1.0f;
-        game.postProcessingRenderer.glowIntensity = 0.2f;
-        game.postProcessingRenderer.glowRadius = 7;
-        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
-        game.postProcessingRenderer.exposure = 1.0f;
-        
         environment.ambientMap = aEnvmap.texture;
         environment.ambientBRDF = game.deferredRenderer.brdf;
         environment.ambientEnergy = 1.0f;

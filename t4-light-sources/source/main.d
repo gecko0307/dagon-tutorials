@@ -28,14 +28,6 @@ class TestScene: Scene
     override void afterLoad()
     {
         environment.ambientColor = Color4f(0.2, 0.2, 0.2, 1);
-        game.deferredRenderer.ssaoEnabled = true;
-        game.deferredRenderer.ssaoPower = 6.0;
-        game.postProcessingRenderer.glowEnabled = true;
-        game.postProcessingRenderer.glowThreshold = 0.2f;
-        game.postProcessingRenderer.glowIntensity = 0.01f;
-        game.postProcessingRenderer.glowRadius = 10;
-        game.postProcessingRenderer.fxaaEnabled = true;
-        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
         
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);

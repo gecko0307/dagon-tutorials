@@ -39,11 +39,6 @@ class TestScene: Scene
         physicsWorld = New!NewtonPhysicsWorld(eventManager, assetManager);
         physicsWorld.loadPlugins("./");
         
-        game.deferredRenderer.ssaoEnabled = true;
-        game.deferredRenderer.ssaoPower = 6.0;
-        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
-        game.postProcessingRenderer.fxaaEnabled = true;
-        
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);
         freeview.setZoom(5);

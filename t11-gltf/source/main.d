@@ -27,12 +27,7 @@ class TestScene: Scene
     }
 
     override void afterLoad()
-    {  
-        game.deferredRenderer.ssaoEnabled = true;
-        game.deferredRenderer.ssaoPower = 6.0;
-        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
-        game.postProcessingRenderer.fxaaEnabled = true;
-        
+    {
         environment.backgroundColor = Color4f(0.75f, 0.75f, 1.0f, 1.0f);
         environment.fogEnd = 1000.0f;
         
@@ -133,7 +128,7 @@ class MyGame: Game
         super(w, h, fullscreen, title, args);
         currentScene = New!TestScene(this);
         
-        simpleRenderer = New!SimpleRenderer(eventManager, this);
+        simpleRenderer = New!SimpleRenderer(this, this);
         renderer = simpleRenderer;
         
         pass0 = simpleRenderer.defaultLayerPass;

@@ -22,11 +22,6 @@ class TestScene: Scene
 
     override void afterLoad()
     {
-        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
-        game.deferredRenderer.ssaoEnabled = true;
-        game.deferredRenderer.ssaoPower = 6.0;
-        game.postProcessingRenderer.fxaaEnabled = true;
-        
         auto camera = addCamera();
         camera.fov = 60.0f;
         auto freeview = New!FreeviewComponent(eventManager, camera);

@@ -19,7 +19,7 @@ class TestScene: Scene
         aOBJSuzanne = addOBJAsset("../assets/suzanne.obj");
     }
     
-    override void onControllerButtonDown(int btn)
+    override void onControllerButtonDown(uint deviceIndex, int btn)
     {
         string name;
         switch(btn)
@@ -42,7 +42,7 @@ class TestScene: Scene
         logInfo(name);
     }
     
-    override void onControllerAxisMotion(int axis, float value)
+    override void onControllerAxisMotion(uint deviceIndex, int axis, float value)
     {
         string name;
         switch(axis)

@@ -7,8 +7,8 @@
         "Timur Gafarov"
     ],
     "dependencies": {
-        "dagon": "~>0.27.1",
-        "dagon:nuklear": "~>0.27.1"
+        "dagon": "~>1.0.0-beta1",
+        "dagon:nuklear": "~>1.0.0-beta1"
     },
     "buildRequirements": [
         "allowWarnings"

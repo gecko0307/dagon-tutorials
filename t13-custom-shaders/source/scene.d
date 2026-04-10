@@ -102,18 +102,5 @@ class MyScene: Scene
         ringsShader.planetPosition = ePlanet.position;
         ringsShader.planetRadius = 30.0f;
         eRings.material.shader = ringsShader;
-        
-        game.deferredRenderer.ssaoEnabled = true;
-        game.deferredRenderer.ssaoPower = 8.0f;
-        game.deferredRenderer.ssaoRadius = 0.5;
-        game.deferredRenderer.ssaoDenoise = 1.0f;
-        game.deferredRenderer.occlusionBufferDetail = 1.0f;
-        game.postProcessingRenderer.fxaaEnabled = true;
-        game.postProcessingRenderer.motionBlurEnabled = true;
-        game.postProcessingRenderer.glowEnabled = true;
-        game.postProcessingRenderer.glowThreshold = 0.4f;
-        game.postProcessingRenderer.glowIntensity = 0.3f;
-        game.postProcessingRenderer.glowRadius = 7;
-        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
     }
 }
