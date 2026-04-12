@@ -20,11 +20,11 @@ This repository hosts sample projects for [Dagon engine](https://github.com/geck
 14. [Input Manager](https://gecko0307.github.io/dagon/?p=tutorial14)
 15. [Terrain](https://gecko0307.github.io/dagon/?p=tutorial15)
 16. Decals
-17. [Character Controller](https://gecko0307.github.io/dagon/?p=tutorial17)
+17. [Newton Character Controller](https://gecko0307.github.io/dagon/?p=tutorial17)
 18. [Nuklear GUI](https://gecko0307.github.io/dagon/?p=tutorial18)
 19. 3D Sound
-20. Animation
-21. Ray Casting
-22. Vehicle Physics
+20. Jolt Physics
+21. Jolt Character Controller
+22. Jolt Vehicle
 23. ImGui
 24. Environment probes

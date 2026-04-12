@@ -37,7 +37,9 @@ class TestScene: Scene
     override void afterLoad()
     {
         physicsWorld = New!NewtonPhysicsWorld(eventManager, assetManager);
-        physicsWorld.loadPlugins("./");
+        
+        // Newton plugins cause crash under Linux for some reason
+        version(Windows) physicsWorld.loadPlugins("./");
         
         auto camera = addCamera();
         auto freeview = New!FreeviewComponent(eventManager, camera);
