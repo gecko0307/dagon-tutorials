@@ -38,19 +38,6 @@ class TestScene: Scene
 
     override void afterLoad()
     {
-        game.deferredRenderer.ssaoEnabled = true;
-        game.deferredRenderer.ssaoPower = 6.0;
-        game.postProcessingRenderer.tonemapper = Tonemapper.Filmic;
-        game.postProcessingRenderer.motionBlurEnabled = true;
-        game.postProcessingRenderer.motionBlurFramerate = 45;
-        game.postProcessingRenderer.glowEnabled = true;
-        game.postProcessingRenderer.glowThreshold = 0.3f;
-        game.postProcessingRenderer.glowIntensity = 0.3f;
-        game.postProcessingRenderer.glowRadius = 10;
-        game.postProcessingRenderer.fxaaEnabled = true;
-        game.postProcessingRenderer.lutEnabled = false;
-        game.postProcessingRenderer.lensDistortionEnabled = false;
-        
         auto camera = addCamera();
         freeview = New!FreeviewComponent(eventManager, camera);
         freeview.setZoom(5);
