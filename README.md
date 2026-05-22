@@ -11,7 +11,7 @@ This repository hosts sample projects for [Dagon engine](https://github.com/geck
 5. [Environment Maps](https://gecko0307.github.io/dagon/?p=tutorial5)
 6. [PBR](https://gecko0307.github.io/dagon/?p=tutorial6)
 7. [First Person Camera](https://gecko0307.github.io/dagon/?p=tutorial7)
-8. Procedural Sky
+8. [Procedural Sky](https://gecko0307.github.io/dagon/?p=tutorial8)
 9. [Post-processing](https://gecko0307.github.io/dagon/?p=tutorial9)
 10. [Physics](https://gecko0307.github.io/dagon/?p=tutorial10)
 11. [Exporting Assets from Blender](https://gecko0307.github.io/dagon/?p=tutorial11)

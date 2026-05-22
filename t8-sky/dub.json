@@ -1,0 +1,16 @@
+{
+    "name": "tutorial8",
+    "description": "",
+    "homepage": "https://github.com/gecko0307/dagon-tutorials",
+    "license": "BSL-1.0",
+    "authors": [
+        "Timur Gafarov"
+    ],
+    "dependencies": {
+        "dagon": "~>1.0.0"
+    },
+    "buildRequirements": [
+        "allowWarnings"
+    ],
+    "lflags-linux": ["-rpath=$$ORIGIN"]
+}
