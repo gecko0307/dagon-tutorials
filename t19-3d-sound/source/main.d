@@ -1,12 +1,12 @@
 module main;
 
 import dagon;
-import soloud;
+import dagon.ext.audio;
 
 class TestScene: Scene
 {
     MyGame game;
-    Soloud audio;
+    AudioManager audio;
     
     Camera camera;
     FirstPersonViewComponent fpview;
@@ -17,15 +17,13 @@ class TestScene: Scene
     {
         super(game);
         this.game = game;
-        this.audio = game.audio;
+        this.audio = game.audioManager;
     }
 
     override void beforeLoad()
     {
         // Load music
-        music = WavStream.create();
-        music.load("../assets/music/music.flac");
-        music.set3dDistanceDelay(true);
+        music = audio.loadMusic("../assets/music/music.flac");
     }
     
     override void onLoad(Time t, float progress)
@@ -38,6 +36,8 @@ class TestScene: Scene
         camera.position = Vector3f(0.0f, 1.8f, 5.0f);
         fpview = New!FirstPersonViewComponent(eventManager, camera);
         game.renderer.activeCamera = camera;
+        
+        audio.listener = camera;
 
         auto sun = addLight(LightType.Sun);
         sun.shadowEnabled = true;
@@ -55,16 +55,10 @@ class TestScene: Scene
         auto ePlane = addEntity();
         ePlane.drawable = New!ShapePlane(10, 10, 1, assetManager);
         
-        game.deferredRenderer.ssaoEnabled = true;
-        game.deferredRenderer.ssaoPower = 6.0;
-        game.postProcessingRenderer.fxaaEnabled = true;
-        
         // Play music in 3D
-        int voice = audio.play3d(music, eCube.position.x, eCube.position.y, eCube.position.z);
-        audio.setLooping(voice, true);
-        audio.set3dSourceMinMaxDistance(voice, 1.0f, 50.0f);
-        audio.set3dSourceAttenuation(voice, 2, 1.0f);
-        audio.update3dAudio();
+        SoundComponent soundComp = audio.addSoundTo(eCube);
+        soundComp.looping = true;
+        soundComp.play(music);
     }
     
     ~this()
@@ -81,11 +75,7 @@ class TestScene: Scene
         if (inputManager.getButton("left")) camera.strafe(-speed);
         if (inputManager.getButton("right")) camera.strafe(speed);
         
-        // Feed camera data to 3D listener
-        audio.set3dListenerPosition(camera.position.x, camera.position.y, camera.position.z);
-        audio.set3dListenerAt(camera.direction.x, camera.direction.y, camera.direction.z);
-        audio.set3dListenerUp(camera.up.x, camera.up.y, camera.up.z);
-        audio.update3dAudio();
+        audio.update(t);
     }
     
     override void onKeyDown(int key)
@@ -93,10 +83,6 @@ class TestScene: Scene
         if (key == KEY_ESCAPE)
             application.exit();
     }
-    
-    override void onKeyUp(int key) { }
-    
-    override void onMouseButtonDown(int button) { }
 
     override void onMouseButtonUp(int button)
     {
@@ -109,13 +95,12 @@ class TestScene: Scene
 
 class MyGame: Game
 {
-    Soloud audio;
+    AudioManager audioManager;
     
     this(uint w, uint h, bool fullscreen, string title, string[] args)
     {
         super(w, h, fullscreen, title, args);
-        audio = Soloud.create();
-        audio.init(Soloud.CLIP_ROUNDOFF | Soloud.LEFT_HANDED_3D);
+        audioManager = New!AudioManager(this);
         currentScene = New!TestScene(this);
     }
 }

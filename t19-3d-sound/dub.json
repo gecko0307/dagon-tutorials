@@ -8,8 +8,7 @@
     ],
     "dependencies": {
         "dagon": "~>1.0.0",
-        "bindbc-loader": "1.1.4",
-        "bindbc-soloud": "~>0.1.1"
+        "dagon:audio": "~>1.0.0"
     },
     "buildRequirements": [
         "allowWarnings"
