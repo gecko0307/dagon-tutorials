@@ -161,7 +161,7 @@ class MyGame: Game
 void main(string[] args)
 {
     ImGuiSupport sup = loadImGui();
-    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 23. ImGui", args);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 20. ImGui", args);
     game.run();
     Delete(game);
 }

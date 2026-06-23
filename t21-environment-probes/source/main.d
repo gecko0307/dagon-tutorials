@@ -126,7 +126,7 @@ class MyGame: Game
 
 void main(string[] args)
 {
-    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 24. Environment Probes", args);
+    MyGame game = New!MyGame(1280, 720, false, "Dagon tutorial 21. Environment Probes", args);
     game.run();
     Delete(game);
 }

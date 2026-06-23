@@ -168,8 +168,14 @@ class TestScene: Scene
                 {
                     gui.layoutRowDynamic(25, 1);
                     if (gui.menuItemLabel("New", NK_TEXT_LEFT)) { }
-                    if (gui.menuItemLabel("Open", NK_TEXT_LEFT)) { }
-                    if (gui.menuItemLabel("Save", NK_TEXT_LEFT)) { }
+                    if (gui.menuItemLabel("Open", NK_TEXT_LEFT))
+                    {
+                        string filename = openFileDialog(["*.*"], "Select a file");
+                    }
+                    if (gui.menuItemLabel("Save", NK_TEXT_LEFT))
+                    {
+                        string filename = saveFileDialog(["*.*"], "Save to a file");
+                    }
                     if (gui.menuItemLabel("Exit", NK_TEXT_LEFT)) { application.exit(); }
                     gui.menuEnd();
                 }
